@@ -46,9 +46,9 @@ Additionally, you need to have an OpenAI API key. If you don't have one, you can
 3. Set your OpenAI API key as an environment variable or enter it when prompted.
 
 4. Run the code using the following command:
-```
-streamlit run app.py
-```
+    ```
+    streamlit run app.py
+    ```
 
 5. A Streamlit application will open in your default web browser.
 
