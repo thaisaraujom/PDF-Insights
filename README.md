@@ -1,6 +1,6 @@
 # PDF Insights 👁️📄
 
-This code allows users to upload PDF files and ask questions about them. It leverages various libraries and APIs to extract text from PDFs, split the text into chunks, create embeddings, and perform question-answering tasks using the OpenAI GPT-3 model.
+This project allows users to upload PDF files and ask questions about them. It leverages various libraries and APIs to extract text from PDFs, split the text into chunks, create embeddings, and perform question-answering tasks.
 
 ## 📝 Overview
 
