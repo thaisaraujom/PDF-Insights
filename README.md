@@ -14,7 +14,7 @@ The code provides a web interface for analyzing PDF files. Here's how it works:
 
 4. Once the PDFs are processed, you can ask questions about the content using the text input field.
 
-5. After entering a question, the code will use the OpenAI GPT-3 model to find relevant information from the knowledge base and provide an answer.
+5. After entering a question, the code will search the knowledge base for relevant information and provide an answer.
 
 ## 📋 Requirements
 
