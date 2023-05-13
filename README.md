@@ -60,8 +60,6 @@ Additionally, you need to have an OpenAI API key. If you don't have one, you can
 
 - You can ask questions about the PDF content by entering them in the provided text input field.
 
-- The code uses the OpenAI GPT-3 model for question-answering tasks. The model generates answers based on the provided question and the extracted text from the PDFs.
-
 - The code displays the generated answer in the Streamlit interface.
 
 - The code uses a spinner to indicate processing or thinking time during PDF extraction and question-answering tasks.
