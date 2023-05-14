@@ -26,6 +26,7 @@ Make sure you have the following dependencies and libraries installed:
 - openai==0.27.2
 - langchain==0.0.167
 - faiss-cpu==1.7.4
+- streamlit-chat==0.0.2.2
 
 You can install the required libraries by running the following command:
 ```
