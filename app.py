@@ -9,14 +9,13 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
 from langchain.callbacks import get_openai_callback
 from collections import deque
-from fpdf import FPDF
 from io import BytesIO
 import base64
 
 
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.platypus import SimpleDocTemplate, Paragraph, PageBreak
+from reportlab.platypus import SimpleDocTemplate, Paragraph
 from reportlab.lib.units import inch
 from reportlab.platypus.flowables import Image
 from PIL import Image as PilImage
@@ -179,7 +178,6 @@ def main():
             # Add a button to export the chat to a PDF file
             if len(st.session_state.all_messages) > 0:  # Display the export button only if there's at least one message
                 if export_chat_button:
-                    import base64
 
                     # Generate PDF bytes
                     pdf_bytes = export_chat_to_pdf()
