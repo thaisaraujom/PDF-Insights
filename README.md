@@ -1,6 +1,6 @@
 # PDF Insights 👁️📄
 
-This project allows users to upload PDF files and ask questions about them. It leverages various libraries and APIs to extract text from PDFs, split the text into chunks, create embeddings, and perform question-answering tasks.
+This project allows users to upload PDF files and ask questions about them. It leverages various libraries and APIs to extract text from PDFs, split the text into chunks, create embeddings, and perform question-answering tasks. Now, with the addition of a feature that allows exporting the chat history to a PDF file.
 
 ## 📝 Overview
 
@@ -16,6 +16,8 @@ The code provides a web interface for analyzing PDF files. Here's how it works:
 
 5. After entering a question, the code will search the knowledge base for relevant information and provide an answer.
 
+6. At the end of the conversation, you can export the entire chat history to a PDF file by clicking the "Export Chat" button.
+
 ## 📋 Requirements
 
 Make sure you have the following dependencies and libraries installed:
@@ -27,6 +29,8 @@ Make sure you have the following dependencies and libraries installed:
 - langchain==0.0.167
 - faiss-cpu==1.7.4
 - streamlit-chat==0.0.2.2
+- pillow==9.5.0
+- reportlab==3.6.13
 
 You can install the required libraries by running the following command:
 ```
