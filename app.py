@@ -146,50 +146,47 @@ def display_chat():
 
 def main():
     initialize_session_state()
-
+    st.title('PDF Insights')
     openai_key = st.text_input('Enter your OpenAI API key:', type='password', key='openai_key')
-    st.header('PDF Insights')
-
     if openai_key:
         os.environ["OPENAI_API_KEY"] = openai_key
-        st.success('API key provided.')
-
-        pdfs = st.file_uploader('Choose PDF files', type=['pdf'], accept_multiple_files=True)
-
-        # Add a button to confirm PDF processing
-        process_pdfs_button = st.button('Process PDFs')
-
-        # Extract text from the uploaded PDF
-        if process_pdfs_button and pdfs and not st.session_state.pdfs_processed:
-            process_pdfs(pdfs)
-        
-        # Placeholder for question input
-        question_placeholder = st.empty()
-
-        if st.session_state.pdfs_processed:
-            user_question = question_placeholder.text_input('Ask a question about your PDF:', key='text_input')
-            
-            # Only process the question if the Export Chat button has not been pressed
-            export_chat_button = st.button('Export Chat')
-            if user_question and not export_chat_button:
-                answer_question(user_question)
-                display_chat()
-
-            # Add a button to export the chat to a PDF file
-            if len(st.session_state.all_messages) > 0:  # Display the export button only if there's at least one message
-                if export_chat_button:
-
-                    # Generate PDF bytes
-                    pdf_bytes = export_chat_to_pdf()
-
-                    # Create a download link
-                    b64 = base64.b64encode(pdf_bytes).decode()
-                    linko= f'<a href="data:application/octet-stream;base64,{b64}" download="chat_history.pdf">Click Here to download your PDF file</a>'
-                    st.markdown(linko, unsafe_allow_html=True)
-
-
+        st.success('API key provided', icon='✅')
     else:
-        st.warning('Please enter your OpenAI API key.')
+        st.warning('Please enter your OpenAI API key.', icon='⚠️')
+        st.stop()
+
+    pdfs = st.file_uploader('Choose PDF files', type=['pdf'], accept_multiple_files=True)
+
+    # Add a button to confirm PDF processing
+    process_pdfs_button = st.button('Process PDFs')
+
+    # Extract text from the uploaded PDF
+    if process_pdfs_button and pdfs and not st.session_state.pdfs_processed:
+        process_pdfs(pdfs)
+    
+    # Placeholder for question input
+    question_placeholder = st.empty()
+
+    if st.session_state.pdfs_processed:
+        user_question = question_placeholder.text_input('Ask a question about your PDF:', key='text_input')
+        
+        # Only process the question if the Export Chat button has not been pressed
+        export_chat_button = st.button('Export Chat')
+        if user_question and not export_chat_button:
+            answer_question(user_question)
+            display_chat()
+
+        # Add a button to export the chat to a PDF file
+        if len(st.session_state.all_messages) > 0:  # Display the export button only if there's at least one message
+            if export_chat_button:
+
+                # Generate PDF bytes
+                pdf_bytes = export_chat_to_pdf()
+
+                # Create a download link
+                b64 = base64.b64encode(pdf_bytes).decode()
+                linko= f'<a href="data:application/octet-stream;base64,{b64}" download="chat_history.pdf">Click Here to download your PDF file</a>'
+                st.markdown(linko, unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
