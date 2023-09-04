@@ -32,7 +32,7 @@ This project provides a web interface for analyzing PDF files. Here's how it wor
 
 1. **Clone** the repository:
     ```bash
-    git clone https://github.com/thaisaraujo2000/PDF-Insights.git
+    git clone https://github.com/thaisaraujom/PDF-Insights.git
     ```
 
 2. **Install** the dependencies.
